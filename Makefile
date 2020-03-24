@@ -25,4 +25,4 @@ mypy:
 
 	mv ./tmp-mypy/ortools ./ortools-stubs
 	rm -r ./tmp-mypy
-	find ./ortools-stubs -type d -exec touch {}/"__init__.pyi"  \;
+	python run.py

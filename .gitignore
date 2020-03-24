@@ -1,3 +1,5 @@
 or-tools/
 dist/
 ortools_stubs.egg-info/
+
+.idea/
