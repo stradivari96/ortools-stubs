@@ -12,16 +12,16 @@ mypy:
 	mkdir tmp-mypy
 
 	cd or-tools; \
-	$(PROTOC) ortools/constraint_solver/search_limit.proto; \
 	$(PROTOC) ortools/constraint_solver/assignment.proto; \
-	$(PROTOC) ortools/constraint_solver/solver_parameters.proto; \
 	$(PROTOC) ortools/constraint_solver/routing_enums.proto; \
 	$(PROTOC) ortools/constraint_solver/routing_parameters.proto; \
-	$(PROTOC) ortools/util/optional_boolean.proto; \
+	$(PROTOC) ortools/constraint_solver/search_limit.proto; \
+	$(PROTOC) ortools/constraint_solver/solver_parameters.proto; \
+	$(PROTOC) ortools/data/rcpsp.proto; \
 	$(PROTOC) ortools/linear_solver/linear_solver.proto; \
 	$(PROTOC) ortools/sat/cp_model.proto; \
 	$(PROTOC) ortools/sat/sat_parameters.proto; \
-	$(PROTOC) ortools/data/rcpsp.proto
+	$(PROTOC) ortools/util/optional_boolean.proto
 
 	mv ./tmp-mypy/ortools ./ortools-stubs
 	rm -r ./tmp-mypy

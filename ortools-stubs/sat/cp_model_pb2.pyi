@@ -683,6 +683,7 @@ class PartialVariableAssignment(google___protobuf___message___Message):
 
 class CpModelProto(google___protobuf___message___Message):
     name = ... # type: typing___Text
+    assumptions = ... # type: google___protobuf___internal___containers___RepeatedScalarFieldContainer[int]
 
     @property
     def variables(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[IntegerVariableProto]: ...
@@ -707,6 +708,7 @@ class CpModelProto(google___protobuf___message___Message):
         objective : typing___Optional[CpObjectiveProto] = None,
         search_strategy : typing___Optional[typing___Iterable[DecisionStrategyProto]] = None,
         solution_hint : typing___Optional[PartialVariableAssignment] = None,
+        assumptions : typing___Optional[typing___Iterable[int]] = None,
         ) -> None: ...
     @classmethod
     def FromString(cls, s: bytes) -> CpModelProto: ...
@@ -714,10 +716,10 @@ class CpModelProto(google___protobuf___message___Message):
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     if sys.version_info >= (3,):
         def HasField(self, field_name: typing_extensions___Literal[u"objective",u"solution_hint"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"constraints",u"name",u"objective",u"search_strategy",u"solution_hint",u"variables"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"assumptions",u"constraints",u"name",u"objective",u"search_strategy",u"solution_hint",u"variables"]) -> None: ...
     else:
         def HasField(self, field_name: typing_extensions___Literal[u"objective",b"objective",u"solution_hint",b"solution_hint"]) -> bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"constraints",b"constraints",u"name",b"name",u"objective",b"objective",u"search_strategy",b"search_strategy",u"solution_hint",b"solution_hint",u"variables",b"variables"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"assumptions",b"assumptions",u"constraints",b"constraints",u"name",b"name",u"objective",b"objective",u"search_strategy",b"search_strategy",u"solution_hint",b"solution_hint",u"variables",b"variables"]) -> None: ...
 
 class CpSolverResponse(google___protobuf___message___Message):
     status = ... # type: CpSolverStatus
@@ -726,6 +728,7 @@ class CpSolverResponse(google___protobuf___message___Message):
     best_objective_bound = ... # type: float
     solution_lower_bounds = ... # type: google___protobuf___internal___containers___RepeatedScalarFieldContainer[int]
     solution_upper_bounds = ... # type: google___protobuf___internal___containers___RepeatedScalarFieldContainer[int]
+    sufficient_assumptions_for_infeasibility = ... # type: google___protobuf___internal___containers___RepeatedScalarFieldContainer[int]
     all_solutions_were_found = ... # type: bool
     num_booleans = ... # type: int
     num_conflicts = ... # type: int
@@ -750,6 +753,7 @@ class CpSolverResponse(google___protobuf___message___Message):
         solution_lower_bounds : typing___Optional[typing___Iterable[int]] = None,
         solution_upper_bounds : typing___Optional[typing___Iterable[int]] = None,
         tightened_variables : typing___Optional[typing___Iterable[IntegerVariableProto]] = None,
+        sufficient_assumptions_for_infeasibility : typing___Optional[typing___Iterable[int]] = None,
         all_solutions_were_found : typing___Optional[bool] = None,
         num_booleans : typing___Optional[int] = None,
         num_conflicts : typing___Optional[int] = None,
@@ -767,6 +771,6 @@ class CpSolverResponse(google___protobuf___message___Message):
     def MergeFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     def CopyFrom(self, other_msg: google___protobuf___message___Message) -> None: ...
     if sys.version_info >= (3,):
-        def ClearField(self, field_name: typing_extensions___Literal[u"all_solutions_were_found",u"best_objective_bound",u"deterministic_time",u"num_binary_propagations",u"num_booleans",u"num_branches",u"num_conflicts",u"num_integer_propagations",u"objective_value",u"primal_integral",u"solution",u"solution_info",u"solution_lower_bounds",u"solution_upper_bounds",u"status",u"tightened_variables",u"user_time",u"wall_time"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"all_solutions_were_found",u"best_objective_bound",u"deterministic_time",u"num_binary_propagations",u"num_booleans",u"num_branches",u"num_conflicts",u"num_integer_propagations",u"objective_value",u"primal_integral",u"solution",u"solution_info",u"solution_lower_bounds",u"solution_upper_bounds",u"status",u"sufficient_assumptions_for_infeasibility",u"tightened_variables",u"user_time",u"wall_time"]) -> None: ...
     else:
-        def ClearField(self, field_name: typing_extensions___Literal[u"all_solutions_were_found",b"all_solutions_were_found",u"best_objective_bound",b"best_objective_bound",u"deterministic_time",b"deterministic_time",u"num_binary_propagations",b"num_binary_propagations",u"num_booleans",b"num_booleans",u"num_branches",b"num_branches",u"num_conflicts",b"num_conflicts",u"num_integer_propagations",b"num_integer_propagations",u"objective_value",b"objective_value",u"primal_integral",b"primal_integral",u"solution",b"solution",u"solution_info",b"solution_info",u"solution_lower_bounds",b"solution_lower_bounds",u"solution_upper_bounds",b"solution_upper_bounds",u"status",b"status",u"tightened_variables",b"tightened_variables",u"user_time",b"user_time",u"wall_time",b"wall_time"]) -> None: ...
+        def ClearField(self, field_name: typing_extensions___Literal[u"all_solutions_were_found",b"all_solutions_were_found",u"best_objective_bound",b"best_objective_bound",u"deterministic_time",b"deterministic_time",u"num_binary_propagations",b"num_binary_propagations",u"num_booleans",b"num_booleans",u"num_branches",b"num_branches",u"num_conflicts",b"num_conflicts",u"num_integer_propagations",b"num_integer_propagations",u"objective_value",b"objective_value",u"primal_integral",b"primal_integral",u"solution",b"solution",u"solution_info",b"solution_info",u"solution_lower_bounds",b"solution_lower_bounds",u"solution_upper_bounds",b"solution_upper_bounds",u"status",b"status",u"sufficient_assumptions_for_infeasibility",b"sufficient_assumptions_for_infeasibility",u"tightened_variables",b"tightened_variables",u"user_time",b"user_time",u"wall_time",b"wall_time"]) -> None: ...

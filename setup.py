@@ -25,7 +25,7 @@ setup(
     long_description_content_type='text/markdown',
     url="https://github.com/stradivari96/ortools-stubs",
     license='MIT',
-    version="7.5.1",
+    version="7.6.0",
     packages=['ortools-stubs'],
     package_data=find_stubs('ortools-stubs'),
 )
