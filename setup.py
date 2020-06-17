@@ -15,6 +15,7 @@ def find_stubs(package):
             stubs.append(path)
     return {package: stubs}
 
+# python setup.py sdist
 # twine upload --skip-existing --repository pypi dist/*
 setup(
     name='ortools-stubs',
@@ -25,7 +26,7 @@ setup(
     long_description_content_type='text/markdown',
     url="https://github.com/stradivari96/ortools-stubs",
     license='MIT',
-    version="7.6.0",
+    version="7.7.0",
     packages=['ortools-stubs'],
     package_data=find_stubs('ortools-stubs'),
 )

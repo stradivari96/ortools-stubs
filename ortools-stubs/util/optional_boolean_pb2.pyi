@@ -2,6 +2,11 @@
 import sys
 from google.protobuf.descriptor import (
     EnumDescriptor as google___protobuf___descriptor___EnumDescriptor,
+    FileDescriptor as google___protobuf___descriptor___FileDescriptor,
+)
+
+from google.protobuf.internal.enum_type_wrapper import (
+    _EnumTypeWrapper as google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper,
 )
 
 from google.protobuf.message import (
@@ -9,27 +14,25 @@ from google.protobuf.message import (
 )
 
 from typing import (
-    List as typing___List,
-    Tuple as typing___Tuple,
+    NewType as typing___NewType,
     cast as typing___cast,
 )
 
 
-class OptionalBoolean(int):
+builtin___int = int
+
+
+DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
+
+OptionalBooleanValue = typing___NewType('OptionalBooleanValue', builtin___int)
+type___OptionalBooleanValue = OptionalBooleanValue
+OptionalBoolean: _OptionalBoolean
+class _OptionalBoolean(google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper[OptionalBooleanValue]):
     DESCRIPTOR: google___protobuf___descriptor___EnumDescriptor = ...
-    @classmethod
-    def Name(cls, number: int) -> str: ...
-    @classmethod
-    def Value(cls, name: str) -> OptionalBoolean: ...
-    @classmethod
-    def keys(cls) -> typing___List[str]: ...
-    @classmethod
-    def values(cls) -> typing___List[OptionalBoolean]: ...
-    @classmethod
-    def items(cls) -> typing___List[typing___Tuple[str, OptionalBoolean]]: ...
-    BOOL_UNSPECIFIED = typing___cast(OptionalBoolean, 0)
-    BOOL_FALSE = typing___cast(OptionalBoolean, 2)
-    BOOL_TRUE = typing___cast(OptionalBoolean, 3)
-BOOL_UNSPECIFIED = typing___cast(OptionalBoolean, 0)
-BOOL_FALSE = typing___cast(OptionalBoolean, 2)
-BOOL_TRUE = typing___cast(OptionalBoolean, 3)
+    BOOL_UNSPECIFIED = typing___cast(OptionalBooleanValue, 0)
+    BOOL_FALSE = typing___cast(OptionalBooleanValue, 2)
+    BOOL_TRUE = typing___cast(OptionalBooleanValue, 3)
+BOOL_UNSPECIFIED = typing___cast(OptionalBooleanValue, 0)
+BOOL_FALSE = typing___cast(OptionalBooleanValue, 2)
+BOOL_TRUE = typing___cast(OptionalBooleanValue, 3)
+type___OptionalBoolean = OptionalBoolean
