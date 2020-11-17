@@ -10,6 +10,7 @@ mypy:
 	rm -rf tmp-mypy
 	rm -rf ortools-stubs
 	mkdir tmp-mypy
+	pip3 install mypy-protobuf
 
 	cd or-tools; \
 	$(PROTOC) ortools/constraint_solver/assignment.proto; \
@@ -25,4 +26,4 @@ mypy:
 
 	mv ./tmp-mypy/ortools ./ortools-stubs
 	rm -r ./tmp-mypy
-	python run.py
+	python3 run.py

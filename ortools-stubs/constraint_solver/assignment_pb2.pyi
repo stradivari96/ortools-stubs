@@ -18,7 +18,6 @@ from typing import (
     Iterable as typing___Iterable,
     Optional as typing___Optional,
     Text as typing___Text,
-    Union as typing___Union,
 )
 
 from typing_extensions import (
@@ -30,9 +29,6 @@ builtin___bool = bool
 builtin___bytes = bytes
 builtin___float = float
 builtin___int = int
-if sys.version_info < (3,):
-    builtin___buffer = buffer
-    builtin___unicode = unicode
 
 
 DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
@@ -51,12 +47,6 @@ class IntVarAssignment(google___protobuf___message___Message):
         max : typing___Optional[builtin___int] = None,
         active : typing___Optional[builtin___bool] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> IntVarAssignment: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> IntVarAssignment: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"active",b"active",u"max",b"max",u"min",b"min",u"var_id",b"var_id"]) -> None: ...
 type___IntVarAssignment = IntVarAssignment
 
@@ -86,12 +76,6 @@ class IntervalVarAssignment(google___protobuf___message___Message):
         performed_max : typing___Optional[builtin___int] = None,
         active : typing___Optional[builtin___bool] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> IntervalVarAssignment: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> IntervalVarAssignment: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"active",b"active",u"duration_max",b"duration_max",u"duration_min",b"duration_min",u"end_max",b"end_max",u"end_min",b"end_min",u"performed_max",b"performed_max",u"performed_min",b"performed_min",u"start_max",b"start_max",u"start_min",b"start_min",u"var_id",b"var_id"]) -> None: ...
 type___IntervalVarAssignment = IntervalVarAssignment
 
@@ -111,12 +95,6 @@ class SequenceVarAssignment(google___protobuf___message___Message):
         unperformed : typing___Optional[typing___Iterable[builtin___int]] = None,
         active : typing___Optional[builtin___bool] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> SequenceVarAssignment: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SequenceVarAssignment: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"active",b"active",u"backward_sequence",b"backward_sequence",u"forward_sequence",b"forward_sequence",u"unperformed",b"unperformed",u"var_id",b"var_id"]) -> None: ...
 type___SequenceVarAssignment = SequenceVarAssignment
 
@@ -130,12 +108,6 @@ class WorkerInfo(google___protobuf___message___Message):
         worker_id : typing___Optional[builtin___int] = None,
         bns : typing___Optional[typing___Text] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> WorkerInfo: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> WorkerInfo: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"bns",b"bns",u"worker_id",b"worker_id"]) -> None: ...
 type___WorkerInfo = WorkerInfo
 
@@ -167,12 +139,6 @@ class AssignmentProto(google___protobuf___message___Message):
         worker_info : typing___Optional[type___WorkerInfo] = None,
         is_valid : typing___Optional[builtin___bool] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> AssignmentProto: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> AssignmentProto: ...
     def HasField(self, field_name: typing_extensions___Literal[u"objective",b"objective",u"worker_info",b"worker_info"]) -> builtin___bool: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"int_var_assignment",b"int_var_assignment",u"interval_var_assignment",b"interval_var_assignment",u"is_valid",b"is_valid",u"objective",b"objective",u"sequence_var_assignment",b"sequence_var_assignment",u"worker_info",b"worker_info"]) -> None: ...
 type___AssignmentProto = AssignmentProto

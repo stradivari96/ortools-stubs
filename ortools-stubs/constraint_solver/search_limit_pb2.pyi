@@ -11,7 +11,6 @@ from google.protobuf.message import (
 
 from typing import (
     Optional as typing___Optional,
-    Union as typing___Union,
 )
 
 from typing_extensions import (
@@ -23,9 +22,6 @@ builtin___bool = bool
 builtin___bytes = bytes
 builtin___float = float
 builtin___int = int
-if sys.version_info < (3,):
-    builtin___buffer = buffer
-    builtin___unicode = unicode
 
 
 DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
@@ -48,11 +44,5 @@ class RegularLimitParameters(google___protobuf___message___Message):
         smart_time_check : typing___Optional[builtin___bool] = None,
         cumulative : typing___Optional[builtin___bool] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> RegularLimitParameters: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> RegularLimitParameters: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"branches",b"branches",u"cumulative",b"cumulative",u"failures",b"failures",u"smart_time_check",b"smart_time_check",u"solutions",b"solutions",u"time",b"time"]) -> None: ...
 type___RegularLimitParameters = RegularLimitParameters

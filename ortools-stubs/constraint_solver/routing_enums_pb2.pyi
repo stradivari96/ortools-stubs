@@ -16,16 +16,11 @@ from google.protobuf.message import (
 
 from typing import (
     NewType as typing___NewType,
-    Union as typing___Union,
     cast as typing___cast,
 )
 
 
-builtin___bytes = bytes
 builtin___int = int
-if sys.version_info < (3,):
-    builtin___buffer = buffer
-    builtin___unicode = unicode
 
 
 DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
@@ -74,12 +69,6 @@ class FirstSolutionStrategy(google___protobuf___message___Message):
 
     def __init__(self,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> FirstSolutionStrategy: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> FirstSolutionStrategy: ...
 type___FirstSolutionStrategy = FirstSolutionStrategy
 
 class LocalSearchMetaheuristic(google___protobuf___message___Message):
@@ -108,10 +97,4 @@ class LocalSearchMetaheuristic(google___protobuf___message___Message):
 
     def __init__(self,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> LocalSearchMetaheuristic: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> LocalSearchMetaheuristic: ...
 type___LocalSearchMetaheuristic = LocalSearchMetaheuristic

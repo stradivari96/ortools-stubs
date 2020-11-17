@@ -18,7 +18,6 @@ from typing import (
     NewType as typing___NewType,
     Optional as typing___Optional,
     Text as typing___Text,
-    Union as typing___Union,
     cast as typing___cast,
 )
 
@@ -31,9 +30,6 @@ builtin___bool = bool
 builtin___bytes = bytes
 builtin___float = float
 builtin___int = int
-if sys.version_info < (3,):
-    builtin___buffer = buffer
-    builtin___unicode = unicode
 
 
 DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
@@ -109,11 +105,5 @@ class ConstraintSolverParameters(google___protobuf___message___Message):
         skip_locally_optimal_paths : typing___Optional[builtin___bool] = None,
         check_solution_period : typing___Optional[builtin___int] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> ConstraintSolverParameters: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> ConstraintSolverParameters: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"array_split_size",b"array_split_size",u"check_solution_period",b"check_solution_period",u"compress_trail",b"compress_trail",u"diffn_use_cumulative",b"diffn_use_cumulative",u"disable_solve",b"disable_solve",u"max_edge_finder_size",b"max_edge_finder_size",u"name_all_variables",b"name_all_variables",u"name_cast_variables",b"name_cast_variables",u"print_added_constraints",b"print_added_constraints",u"print_local_search_profile",b"print_local_search_profile",u"print_model",b"print_model",u"print_model_stats",b"print_model_stats",u"profile_file",b"profile_file",u"profile_local_search",b"profile_local_search",u"profile_propagation",b"profile_propagation",u"skip_locally_optimal_paths",b"skip_locally_optimal_paths",u"store_names",b"store_names",u"trace_propagation",b"trace_propagation",u"trace_search",b"trace_search",u"trail_block_size",b"trail_block_size",u"use_all_possible_disjunctions",b"use_all_possible_disjunctions",u"use_cumulative_edge_finder",b"use_cumulative_edge_finder",u"use_cumulative_time_table",b"use_cumulative_time_table",u"use_cumulative_time_table_sync",b"use_cumulative_time_table_sync",u"use_element_rmq",b"use_element_rmq",u"use_sequence_high_demand_tasks",b"use_sequence_high_demand_tasks",u"use_small_table",b"use_small_table"]) -> None: ...
 type___ConstraintSolverParameters = ConstraintSolverParameters

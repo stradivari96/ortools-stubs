@@ -18,7 +18,6 @@ from typing import (
     Iterable as typing___Iterable,
     Optional as typing___Optional,
     Text as typing___Text,
-    Union as typing___Union,
 )
 
 from typing_extensions import (
@@ -30,9 +29,6 @@ builtin___bool = bool
 builtin___bytes = bytes
 builtin___float = float
 builtin___int = int
-if sys.version_info < (3,):
-    builtin___buffer = buffer
-    builtin___unicode = unicode
 
 
 DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
@@ -51,12 +47,6 @@ class Resource(google___protobuf___message___Message):
         renewable : typing___Optional[builtin___bool] = None,
         unit_cost : typing___Optional[builtin___int] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> Resource: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Resource: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"max_capacity",b"max_capacity",u"min_capacity",b"min_capacity",u"renewable",b"renewable",u"unit_cost",b"unit_cost"]) -> None: ...
 type___Resource = Resource
 
@@ -72,12 +62,6 @@ class Recipe(google___protobuf___message___Message):
         demands : typing___Optional[typing___Iterable[builtin___int]] = None,
         resources : typing___Optional[typing___Iterable[builtin___int]] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> Recipe: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Recipe: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"demands",b"demands",u"duration",b"duration",u"resources",b"resources"]) -> None: ...
 type___Recipe = Recipe
 
@@ -89,12 +73,6 @@ class PerRecipeDelays(google___protobuf___message___Message):
         *,
         min_delays : typing___Optional[typing___Iterable[builtin___int]] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> PerRecipeDelays: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> PerRecipeDelays: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"min_delays",b"min_delays"]) -> None: ...
 type___PerRecipeDelays = PerRecipeDelays
 
@@ -108,12 +86,6 @@ class PerSuccessorDelays(google___protobuf___message___Message):
         *,
         recipe_delays : typing___Optional[typing___Iterable[type___PerRecipeDelays]] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> PerSuccessorDelays: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> PerSuccessorDelays: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"recipe_delays",b"recipe_delays"]) -> None: ...
 type___PerSuccessorDelays = PerSuccessorDelays
 
@@ -133,12 +105,6 @@ class Task(google___protobuf___message___Message):
         recipes : typing___Optional[typing___Iterable[type___Recipe]] = None,
         successor_delays : typing___Optional[typing___Iterable[type___PerSuccessorDelays]] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> Task: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Task: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"recipes",b"recipes",u"successor_delays",b"successor_delays",u"successors",b"successors"]) -> None: ...
 type___Task = Task
 
@@ -180,11 +146,5 @@ class RcpspProblem(google___protobuf___message___Message):
         due_date : typing___Optional[builtin___int] = None,
         name : typing___Optional[typing___Text] = None,
         ) -> None: ...
-    if sys.version_info >= (3,):
-        @classmethod
-        def FromString(cls, s: builtin___bytes) -> RcpspProblem: ...
-    else:
-        @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> RcpspProblem: ...
     def ClearField(self, field_name: typing_extensions___Literal[u"basedata",b"basedata",u"deadline",b"deadline",u"due_date",b"due_date",u"horizon",b"horizon",u"is_consumer_producer",b"is_consumer_producer",u"is_rcpsp_max",b"is_rcpsp_max",u"is_resource_investment",b"is_resource_investment",u"mpm_time",b"mpm_time",u"name",b"name",u"release_date",b"release_date",u"resources",b"resources",u"seed",b"seed",u"tardiness_cost",b"tardiness_cost",u"tasks",b"tasks"]) -> None: ...
 type___RcpspProblem = RcpspProblem
